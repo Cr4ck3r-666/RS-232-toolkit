@@ -30,6 +30,8 @@ void configurePort(int fd, int baudRate)
     tcsetattr(fd, TCSANOW, &options);
 }
 
+// pierwsza zmiana w kodzie
+
 void scanSerialPorts()
 {
     int i;
