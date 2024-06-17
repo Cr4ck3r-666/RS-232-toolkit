@@ -32,6 +32,8 @@ void configurePort(int fd, int baudRate)
 
 // pierwsza zmiana w kodzie
 
+// Druga zmiana w kodzie
+
 void scanSerialPorts()
 {
     int i;
