@@ -41,11 +41,12 @@ void scanSerialPorts()
         struct dirent* entry;
         while ((entry = readdir(dir)) != nullptr) 
         {
-            if (strncmp(entry->d_name, "ttyUSB", 6) == 0 || strncmp(entry->d_name, "ttyACM", 6) == 0|| strncmp(entry->d_name, "ttyS0", 6) == 0)
+            if (strncmp(entry->d_name, "ttyUSB", 6) == 0 || strncmp(entry->d_name, "ttyS0", 6) == 0)
             {
                 string portName = "/dev/" + string(entry->d_name);
                 ports.push_back(portName);
             }
+            
         }
         closedir(dir);
     }
@@ -260,14 +261,14 @@ int main()
         
             if (ports.empty()) 
             {
-                cout<< i <<"No serial ports found."<<endl;
+                cout<<"No serial ports found."<<endl;
             }    
             else 
             {
                 cout<<"Found serial ports:"<<endl;
                 for (const auto& port : ports) 
                 {
-                    cout<< i <<port<<endl;
+                    cout<< i <<". "<< port <<endl;
                 }
             }  
             goto menu;
@@ -291,6 +292,8 @@ int main()
             }
 
             configurePort(fd, BaudRate);
+
+            // Wstawić zapis i odczyt do pliku
             const char* data = "Hello, World!";
             write(fd, data, strlen(data));
             close(fd);
