@@ -9,7 +9,6 @@ Now it's for testing
 
 1. Send and recive information with serial port
 2. Scanning a serial device
-3. 
 
 # Plans
 
