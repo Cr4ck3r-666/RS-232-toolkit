@@ -41,7 +41,7 @@ void scanSerialPorts()
         struct dirent* entry;
         while ((entry = readdir(dir)) != nullptr) 
         {
-            if (strncmp(entry->d_name, "ttyUSB", 6) == 0 || strncmp(entry->d_name, "ttyS0", 6) == 0)
+            if (strncmp(entry->d_name, "ttyUSB", 6) == 0 || strncmp(entry->d_name, "ttyS0", 6) == 0 || strncmp(entry->d_name, "ttyACM", 6) == 0)
             {
                 string portName = "/dev/" + string(entry->d_name);
                 ports.push_back(portName);
