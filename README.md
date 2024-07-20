@@ -1,5 +1,3 @@
-# RS-232-toolkit
-
 # Introduction's 
 RS 232 toolkit is a console aplication for communication on RS232 port
 at linux system. That's tool was created for fun and bether experience
